@@ -83,18 +83,34 @@ console.log(reverseString("EPICODE"));
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+function upperFirst(str) {
+  return str
+    .split(" ")
+    .map((word) => word[0].toUpperCase() + word.substring(1))
+    .join(" ");
+}
+console.log(upperFirst("epicode is awesome"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(str) {
+  return str.length > 2 ? str.slice(1, -1) : "";
+}
+console.log(cutString("Epicode"));
+console.log(cutString("JavaScript"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  let randomNumbers = [];
+  for (let i = 0; i < n; i++) {
+    randomNumbers.push(Math.floor(Math.random() * 11)); // Numeri tra 0 e 10 inclusi
+  }
+  return randomNumbers;
+}
+console.log(giveMeRandom(5));
+console.log(giveMeRandom(10));
